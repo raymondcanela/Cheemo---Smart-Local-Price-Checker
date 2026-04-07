@@ -1,0 +1,47 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="OLW0TvJCpfGupTUkO1TF">
+    <mxGraphModel dx="1278" dy="675" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="light-dark(#FFFFFF,#120E05)" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="5Rv3zvAPgIQggiRFWlNB-1" edge="1" parent="1" source="5Rv3zvAPgIQggiRFWlNB-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="5Rv3zvAPgIQggiRFWlNB-3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="425" y="150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5Rv3zvAPgIQggiRFWlNB-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="External Sources&lt;div&gt;(APIs / Web Scraping / Dataset)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="280" x="285" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5Rv3zvAPgIQggiRFWlNB-7" edge="1" parent="1" source="5Rv3zvAPgIQggiRFWlNB-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="5Rv3zvAPgIQggiRFWlNB-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5Rv3zvAPgIQggiRFWlNB-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Data Pipeline (ETL)&lt;div&gt;Python + Pandas&lt;/div&gt;&lt;div&gt;*Linux Laptop&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="280" x="285" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="5Rv3zvAPgIQggiRFWlNB-4" edge="1" parent="1" source="5Rv3zvAPgIQggiRFWlNB-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="425" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5Rv3zvAPgIQggiRFWlNB-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="PostgreSQL DB&lt;div&gt;(Linux Server)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="280" x="285" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="5Rv3zvAPgIQggiRFWlNB-6" edge="1" parent="1" source="5Rv3zvAPgIQggiRFWlNB-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" target="5Rv3zvAPgIQggiRFWlNB-5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="460" y="370" as="sourcePoint" />
+            <mxPoint x="460" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5Rv3zvAPgIQggiRFWlNB-10" edge="1" parent="1" source="5Rv3zvAPgIQggiRFWlNB-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="5Rv3zvAPgIQggiRFWlNB-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5Rv3zvAPgIQggiRFWlNB-8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Frontend UI&lt;div&gt;HTML/CSS/JS + Chart.js&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="280" x="285" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="5Rv3zvAPgIQggiRFWlNB-9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Users" vertex="1">
+          <mxGeometry height="60" width="280" x="285" y="500" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
