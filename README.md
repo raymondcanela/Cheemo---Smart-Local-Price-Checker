@@ -1,37 +1,53 @@
-# Cheemo---Smart-Local-Price-Checker
-Web-based Data Analytics Tool That Tracks Prices of Products and Show Trends of local online stores. 
+# Cheemo — Smart Local Price Checker
 
-Dataset
--Source:
--Features:
--Target:
+A web-based data analytics tool that tracks product prices and shows trends across local online stores.
 
-Core Development Tool
--Visual Studio Code
--Jira
--Git
--Figma
+---
 
-System/Infrastructure
--Linux (Ubuntu)
--PostgreSQL
--SSH
--CRON
+## 📊 Dataset
+- **Source:** 
+- **Features:** 
+- **Target:** 
 
-Languages
--Programming: Python
--Query: SQL
--Scripting: Bash
--Frontend: HTML, CSS, JavaScript. TypeScript
+---
 
-Backend & API
--Chart.js
+## 🛠️ Core Development Tools
+- Visual Studio Code  
+- Jira  
+- Git  
+- Figma  
 
-Documentation
--Figma
--Draw.io
--Markdown
+---
 
+## 🖥️ System / Infrastructure
+- Linux (Ubuntu)  
+- PostgreSQL  
+- SSH  
+- Cron  
 
-**How to Run**
-Clone the repository or download the project folder.
+---
+
+## 💻 Languages
+- **Programming:** Python  
+- **Query:** SQL  
+- **Scripting:** Bash  
+- **Frontend:** HTML, CSS, JavaScript, TypeScript  
+
+---
+
+## 🔌 Backend & API
+- Chart.js  
+
+---
+
+## 📄 Documentation
+- Figma  
+- Draw.io  
+- Markdown  
+
+---
+
+## 🚀 How to Run
+1. Clone the repository:
+   ```bash
+   git clone <your-repo-link>
