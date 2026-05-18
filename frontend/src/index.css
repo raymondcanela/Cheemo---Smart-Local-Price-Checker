@@ -6,3 +6,21 @@
     --color-tertiary: #FC7C78;
     --color-neutral: #717973;
 }
+
+.container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+h1 {
+    color: #2c3e50;
+    font-family: Arial, sans-serif;
+}
+
+img {
+    width: 300px;
+    border-radius: 10px;
+    margin-top: 20px;
+    display: block;
+    margin: 0 auto;
+}
