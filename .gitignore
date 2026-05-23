@@ -1,2 +1,88 @@
-GEMINI.md
-references
+# =========================
+# LOGS
+# =========================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# =========================
+# FRONTEND / NODE / VITE
+# =========================
+node_modules/
+dist/
+dist-ssr/
+.vite/
+*.local
+
+# =========================
+# BACKEND / PYTHON
+# =========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+venv/
+.venv/
+
+# Python build files
+build/
+*.egg-info/
+
+# =========================
+# ENVIRONMENT VARIABLES
+# =========================
+.env
+.env.*
+!.env.example
+
+# =========================
+# DOCKER
+# =========================
+docker-compose.override.yml
+
+# =========================
+# DATABASE / LOCAL STORAGE
+# =========================
+*.sqlite3
+postgres_data/
+
+# =========================
+# TEST / COVERAGE
+# =========================
+.coverage
+htmlcov/
+.pytest_cache/
+
+# =========================
+# CACHE / TEMP FILES
+# =========================
+.cache/
+tmp/
+temp/
+
+# =========================
+# AWS / KEYS / SECRETS
+# =========================
+*.pem
+*.key
+*.crt
+
+# =========================
+# EDITOR DIRECTORIES & FILES
+# =========================
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
