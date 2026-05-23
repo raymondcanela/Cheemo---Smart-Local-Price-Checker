@@ -3,9 +3,11 @@ import psycopg2
 from dotenv import load_dotenv
 from pathlib import Path
 
-# Load .env from project root
 env_path = Path(__file__).resolve().parent.parent / ".env"
 load_dotenv(dotenv_path=env_path)
+
+print("ENV PATH:", env_path)
+print("DB_HOST:", os.getenv("DB_HOST"))
 
 conn = psycopg2.connect(
     host=os.getenv("DB_HOST"),
@@ -24,8 +26,7 @@ VALUES (%s, %s, %s)
 """, ("Test Product", "Electronics", 999))
 
 conn.commit()
-
-print("Inserted successfully!")
-
 cursor.close()
 conn.close()
+
+print("Inserted successfully!")
