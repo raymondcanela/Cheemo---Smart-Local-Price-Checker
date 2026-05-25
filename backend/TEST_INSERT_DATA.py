@@ -3,7 +3,7 @@ import psycopg2
 from dotenv import load_dotenv
 from pathlib import Path
 
-env_path = Path(__file__).resolve().parent.parent / ".env"
+env_path = Path(__file__).resolve().parent / ".env"
 load_dotenv(dotenv_path=env_path)
 
 print("ENV PATH:", env_path)
@@ -21,9 +21,9 @@ cursor = conn.cursor()
 
 cursor.execute("""
 INSERT INTO products
-(title, category, price)
-VALUES (%s, %s, %s)
-""", ("Test Product", "Electronics", 999))
+(title, category, price, rating, description)
+VALUES (%s, %s, %s, %s, %s)
+""", ("baril ni ace", "Guns", 6700, 1.0, "baril ng bipolar"))
 
 conn.commit()
 cursor.close()
