@@ -28,10 +28,10 @@ const Header: React.FC = () => {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-gray-100">
-      <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 h-16 flex items-center">
         
-        {/* Left Side: Logo & Desktop Nav */}
-        <div className="flex items-center gap-8">
+        {/* Left Side: Logo */}
+        <div className="flex items-center gap-8 flex-1">
           <button 
             className="md:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors"
             onClick={() => setIsMobileMenuOpen(true)}
@@ -42,19 +42,20 @@ const Header: React.FC = () => {
           <Link to="/" className="text-2xl font-bold text-primary tracking-tight">
             Cheemo
           </Link>
-
-          <nav className="hidden md:flex items-center gap-6">
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.label}
-                to={link.href}
-                className="text-sm font-medium text-gray-600 hover:text-primary transition-colors flex items-center gap-2"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
         </div>
+
+        {/* Center: Desktop Nav */}
+        <nav className="hidden md:flex items-center gap-6">
+          {NAV_LINKS.map((link) => (
+            <Link
+              key={link.label}
+              to={link.href}
+              className="text-sm font-medium text-gray-600 hover:text-primary transition-colors flex items-center gap-2"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </nav>
 
         {/* Right Side: Search & User Actions */}
         <div className="flex items-center gap-2 flex-1 justify-end">
@@ -81,7 +82,7 @@ const Header: React.FC = () => {
               </button>
               <button 
                 onClick={login}
-                className="bg-primary text-white px-5 py-2 rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity whitespace-nowrap"
+                className="bg-primary-container text-on-primary-container px-5 py-2 rounded-lg text-sm font-bold hover:opacity-90 transition-opacity whitespace-nowrap shadow-sm"
               >
                 Get Started
               </button>

@@ -1,10 +1,40 @@
 @import "tailwindcss";
 
 @theme {
-    --color-primary: #10B981;
-    --color-secondary: #0F172A;
-    --color-tertiary: #FC7C78;
-    --color-neutral: #717973;
+    --color-primary: #006c49;
+    --color-primary-container: #10b981;
+    --color-on-primary-container: #00422b;
+    --color-secondary: #565e74;
+    --color-secondary-container: #dae2fd;
+    --color-tertiary: #a43a3a;
+    --color-tertiary-container: #fc7c78;
+    --color-background: #f4fbf4;
+    --color-surface: #f4fbf4;
+    --color-on-surface: #161d19;
+    --color-on-surface-variant: #3c4a42;
+    --color-outline: #6c7a71;
+    --color-outline-variant: #bbcabf;
+    --color-surface-container-low: #eef6ee;
+    --color-surface-container: #e8f0e9;
+    --color-surface-container-high: #e3eae3;
+    --color-surface-container-highest: #dde4dd;
+    --color-surface-bright: #f4fbf4;
+    --color-error: #ba1a1a;
+    --color-error-red: #EF4444;
+
+    --font-headline: "Inter", sans-serif;
+    --font-body: "Inter", sans-serif;
+
+    --radius-card: 20px;
+    
+    --spacing-gutter: 16px;
+    --spacing-container-margin-mobile: 16px;
+    --spacing-container-margin-desktop: 48px;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 }
 
 .container {

@@ -34,7 +34,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, navLinks }) =>
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-[100] md:hidden">
+        <div className="fixed inset-0 z-100 md:hidden">
           {/* Drawer */}
           <motion.div 
             initial={{ x: '-100%', opacity: 0 }}
@@ -44,7 +44,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, navLinks }) =>
             className="fixed inset-0 w-screen h-screen bg-[#F9FBF9] flex flex-col overflow-hidden"
           >
             {/* Header */}
-            <div className="p-4 flex items-center justify-between border-b border-gray-100/50 flex-shrink-0">
+            <div className="p-4 flex items-center justify-between border-b border-gray-100/50 shrink-0">
               <span className="text-xl font-bold text-[#005F41]">Cheemo</span>
               <button onClick={onClose} className="p-2 hover:bg-gray-200/50 rounded-full transition-colors">
                 <X className="h-5 w-5 text-gray-600" />
@@ -65,7 +65,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, navLinks }) =>
                         onClick={onClose}
                         className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 ${
                           isActive 
-                            ? 'bg-[#10B981] text-white shadow-md' 
+                            ? 'bg-primary text-white shadow-md' 
                             : 'text-gray-600 hover:bg-gray-100'
                         }`}
                       >
@@ -78,7 +78,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, navLinks }) =>
               </ul>
 
               {/* Promo Card */}
-              <div className="mt-4 p-4 rounded-2xl bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-100/50">
+              <div className="mt-4 p-4 rounded-2xl bg-linear-to-br from-emerald-50 to-teal-50 border border-emerald-100/50">
                 <h3 className="text-base font-bold text-gray-900 mb-1">Track Smarter</h3>
                 <p className="text-gray-500 text-xs leading-snug">
                   Join 50k+ shoppers saving an average of 15% on every purchase.
@@ -87,7 +87,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, navLinks }) =>
             </nav>
             
             {/* Footer Actions */}
-            <div className="p-4 space-y-2 bg-white border-t border-gray-100 flex-shrink-0">
+            <div className="p-4 space-y-2 bg-white border-t border-gray-100 shrink-0">
               <button className="w-full bg-[#005F41] text-white py-3.5 rounded-xl font-bold flex items-center justify-center gap-2 hover:opacity-95 transition-opacity text-sm">
                 Sign Up <ArrowRight className="h-4 w-4" />
               </button>
