@@ -14,22 +14,14 @@ const MOCK_ITEMS = [
 
 const SearchBar: React.FC = () => {
   const [query, setQuery] = useState('');
-  const [suggestions, setSuggestions] = useState<string[]>([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (query.length > 1) {
-      const filtered = MOCK_ITEMS.filter((item) =>
+  const suggestions = query.length > 1
+    ? MOCK_ITEMS.filter((item) =>
         item.toLowerCase().includes(query.toLowerCase())
-      );
-      setSuggestions(filtered);
-      setShowSuggestions(true);
-    } else {
-      setSuggestions([]);
-      setShowSuggestions(false);
-    }
-  }, [query]);
+      )
+    : [];
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -49,7 +41,11 @@ const SearchBar: React.FC = () => {
           placeholder="Search tracked items..."
           className="w-full bg-gray-100 border-none rounded-full py-2 pl-10 pr-4 focus:ring-2 focus:ring-primary focus:bg-white transition-all outline-none text-sm"
           value={query}
-          onChange={(e) => setQuery(e.target.value)}
+          onChange={(e) => {
+            const nextValue = e.target.value;
+            setQuery(nextValue);
+            setShowSuggestions(nextValue.length > 1);
+          }}
           onFocus={() => query.length > 1 && setShowSuggestions(true)}
         />
         <Search className="absolute left-3 top-2.5 h-4 w-4 text-gray-400" />
