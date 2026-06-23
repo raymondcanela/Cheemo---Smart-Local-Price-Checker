@@ -5,7 +5,7 @@ app = FastAPI()
 
 @app.get("/")
 def home():
-    return {"message": "Cheemo backend running. bading ka"}
+    return {"message": "Cheemo backend running"}
 
 @app.get("/db-test")
 def db_test():

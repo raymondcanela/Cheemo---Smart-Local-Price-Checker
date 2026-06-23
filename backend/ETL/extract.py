@@ -8,5 +8,4 @@ def read_jsonl_file(file_path):
             if line.strip():
                 yield json.loads(line)
                 
-                
-                
+            
