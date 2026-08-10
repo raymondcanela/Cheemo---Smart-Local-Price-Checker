@@ -49,8 +49,6 @@ The scope of this project includes:
 - **FR-1.1**: The ingestion script must read lines from JSON Lines (`.jsonl`) files containing product listings.
 - **FR-1.2**: Prices must be sanitized and converted into a SQL numeric/decimal type (e.g., stripping currency symbols like `$` and commas).
 - **FR-1.3**: Image URLs must be extracted from lists of image objects by retrieving high-resolution (`hi_res`), large (`large`), or thumbnail (`thumb`) links in descending priority.
-- **FR-1.4**: If a store name does not exist in the `stores` table, the pipeline must dynamically create it and link it using a unique identifier.
-- **FR-1.5**: All database operations per batch (default size: 500) must execute within a transactional block. In case of failure, the batch transaction must roll back.
 
 ### 3.2 Product Catalog, Search & Filtering (FR-2)
 - **FR-2.1**: The system must expose endpoints to query and paginate products.
@@ -59,9 +57,7 @@ The scope of this project includes:
 - **FR-2.4**: The frontend must display a search bar that updates catalog results, with a debounce timer of at least 300ms to throttle API queries.
 
 ### 3.3 Historical Price Tracking & Charts (FR-3)
-- **FR-3.1**: Each product record must link to multiple pricing entries in a time-series schema.
-- **FR-3.2**: The backend must return chronological price histories for any given product ID.
-- **FR-3.3**: The frontend must display price histories using interactive charts (e.g., Chart.js) with clear markers indicating date and pricing fluctuations.
+- **FR-3.1**: The backend must return chronological price histories for any given product ID.
 
 ### 3.4 Deal Discovery & Discount Detection (FR-4)
 - **FR-4.1**: The system must compute the baseline price (e.g., maximum historical price or original price) and compare it against the current (most recent) price to determine the discount percentage.
