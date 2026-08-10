@@ -1,6 +1,6 @@
 import Header from './components/Header/Header';
 import Hero from './components/Hero';
-import TrendingDrops from './components/TrendingDrops';
+import TrendingDrops from './features/products/components/TrendingDrops';
 import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
 
