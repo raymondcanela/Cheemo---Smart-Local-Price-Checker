@@ -1,24 +1,31 @@
-export interface PricePoint {
-  date: string;
-  price: number;
+export interface Store {
+  store_id: number;
+  store_name: string;
 }
 
-export interface Store {
-  id: string;
-  name: string;
-  url: string;
+export interface PricePoint {
+  price_id: number;
+  product_id: number;
+  price: number;
+  recorded_at: string;
 }
 
 export interface Product {
-  id: string;
-  name: string;
+  product_id: number;
+  title: string;
+  main_category: string;
   description: string;
-  category: string;
-  currentPrice: number;
-  originalPrice: number;
-  discountPercentage: number;
-  imageUrl: string;
+  average_rating: number;
+  image_url: string;
   store: Store;
-  priceHistory: PricePoint[];
-  lastUpdated: string;
+  price: number;
+  recorded_at: string;
+  created_at: string;
+}
+
+export interface ProductListResponse {
+  items: Product[];
+  page: number;
+  limit: number;
+  total: number;
 }
