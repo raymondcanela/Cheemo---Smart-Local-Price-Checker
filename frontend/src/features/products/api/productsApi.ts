@@ -189,24 +189,83 @@ const MOCK_PRODUCTS: Product[] = [
 
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
+export interface ProductQueryParams {
+  page?: number;
+  limit?: number;
+  search?: string;
+  category?: string;
+  store?: string;
+  minPrice?: number;
+  maxPrice?: number;
+  sortBy?: 'price' | 'average_rating';
+  sortOrder?: 'asc' | 'desc';
+}
+
+// Derived from mock data now; later these could come from their own endpoints
+// (e.g. GET /categories, GET /stores) once the backend supports it.
+export const AVAILABLE_CATEGORIES = Array.from(
+  new Set(MOCK_PRODUCTS.map((p) => p.main_category))
+).sort();
+
+export const AVAILABLE_STORES = Array.from(
+  new Set(MOCK_PRODUCTS.map((p) => p.store.store_name))
+).sort();
+
 export const getProducts = async (
-  page = 1,
-  limit = 20
+  params: ProductQueryParams = {}
 ): Promise<ProductListResponse> => {
+  const {
+    page = 1,
+    limit = 20,
+    search,
+    category,
+    store,
+    minPrice,
+    maxPrice,
+    sortBy,
+    sortOrder = 'asc',
+  } = params;
+
   await delay(800);
 
   if (Math.random() < 0.1) {
     throw new Error('Failed to fetch products. Please try again later.');
   }
 
+  let filtered = [...MOCK_PRODUCTS];
+
+  if (search) {
+    const q = search.toLowerCase();
+    filtered = filtered.filter((p) => p.title.toLowerCase().includes(q));
+  }
+  if (category) {
+    filtered = filtered.filter((p) => p.main_category === category);
+  }
+  if (store) {
+    filtered = filtered.filter((p) => p.store.store_name === store);
+  }
+  if (minPrice !== undefined) {
+    filtered = filtered.filter((p) => p.price >= minPrice);
+  }
+  if (maxPrice !== undefined) {
+    filtered = filtered.filter((p) => p.price <= maxPrice);
+  }
+
+  if (sortBy) {
+    filtered.sort((a, b) => {
+      const diff = a[sortBy] - b[sortBy];
+      return sortOrder === 'asc' ? diff : -diff;
+    });
+  }
+
   const start = (page - 1) * limit;
   const end = start + limit;
 
   return {
-    items: MOCK_PRODUCTS.slice(start, end),
+    items: filtered.slice(start, end),
     page,
     limit,
-    total: MOCK_PRODUCTS.length,
+    total: filtered.length,
   };
 };
 
