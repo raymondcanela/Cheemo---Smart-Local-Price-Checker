@@ -7,7 +7,7 @@ import ProductCard from './ProductCard';
 const TrendingDrops: React.FC = () => {
   const { data, isLoading, isError, error, refetch } = useQuery({
     queryKey: ['products', 'trending'],
-    queryFn: () => getProducts(1, 4),
+    queryFn: () => getProducts({ page: 1, limit: 4 }),
   });
 
   return (
