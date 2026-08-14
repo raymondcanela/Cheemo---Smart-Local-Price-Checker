@@ -9,6 +9,11 @@ import ProductDetail from './features/products/components/ProductDetail';
 import ProductList from './features/products/components/ProductList';
 import TrendingDrops from './features/products/components/TrendingDrops';
 
+import LoginForm from './features/auth/components/LoginForm';
+import SignupForm from './features/auth/components/SignupForm';
+import MyAccount from './features/auth/components/MyAccount';
+import ProtectedRoute from './features/auth/components/ProtectedRoute';
+
 function App() {
   return (
     <div className="min-h-screen bg-background">
@@ -28,6 +33,16 @@ function App() {
           />
           <Route path="/products" element={<ProductList />} />
           <Route path="/products/:id" element={<ProductDetail />} />
+          <Route path="/login" element={<LoginForm />} />
+          <Route path="/signup" element={<SignupForm />} />
+          <Route
+            path="/account"
+            element={
+              <ProtectedRoute>
+                <MyAccount />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
       </main>
 
