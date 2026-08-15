@@ -23,7 +23,7 @@ const NAV_LINKS = [
 ];
 
 const Header: React.FC = () => {
-  const { isLoggedIn, login } = useAuth();
+  const { isLoggedIn } = useAuth();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
@@ -68,24 +68,24 @@ const Header: React.FC = () => {
                 <Bell className="h-5 w-5 text-gray-600" />
                 <span className="absolute top-2 right-2 w-2 h-2 bg-tertiary rounded-full border-2 border-white"></span>
               </button>
-              <button className="p-2 hover:bg-gray-100 rounded-full transition-colors">
+              <Link to="/account" className="p-2 hover:bg-gray-100 rounded-full transition-colors">
                 <UserIcon className="h-5 w-5 text-gray-600" />
-              </button>
+              </Link>
             </>
           ) : (
             <div className="flex items-center gap-4">
               <button className="p-2 md:hidden hover:bg-gray-100 rounded-full transition-colors">
                 <Bell className="h-5 w-5 text-gray-600" />
               </button>
-              <button className="hidden md:block text-sm font-medium text-gray-600 hover:text-primary transition-colors">
+              <Link to="/login" className="hidden md:block text-sm font-medium text-gray-600 hover:text-primary transition-colors">
                 Sign In
-              </button>
-              <button 
-                onClick={login}
+              </Link>
+              <Link 
+                to="/signup"
                 className="bg-primary-container text-on-primary-container px-5 py-2 rounded-lg text-sm font-bold hover:opacity-90 transition-opacity whitespace-nowrap shadow-sm"
               >
                 Get Started
-              </button>
+              </Link>
             </div>
           )}
         </div>
