@@ -1,7 +1,8 @@
-import React from 'react';
-import { useParams, Link } from 'react-router-dom';
+import FavoriteButton from '@/features/favorites/components/FavoriteButton';
 import { useQuery } from '@tanstack/react-query';
-import { ArrowLeft, Star, Loader2, AlertCircle } from 'lucide-react';
+import { AlertCircle, ArrowLeft, Loader2, Star } from 'lucide-react';
+import React from 'react';
+import { Link, useParams } from 'react-router-dom';
 import { getProductById } from '../api/productsApi';
 
 const ProductDetail: React.FC = () => {
@@ -77,6 +78,7 @@ const ProductDetail: React.FC = () => {
 
             <div className="flex items-baseline gap-3 mb-2">
               <span className="text-4xl font-extrabold text-primary">${product.price.toFixed(2)}</span>
+              <FavoriteButton productId={product.product_id} />
             </div>
             <p className="text-sm text-on-surface-variant">
               at <span className="font-medium">{product.store.store_name}</span>

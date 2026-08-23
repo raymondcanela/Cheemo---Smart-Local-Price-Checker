@@ -13,6 +13,7 @@ import LoginForm from './features/auth/components/LoginForm';
 import SignupForm from './features/auth/components/SignupForm';
 import MyAccount from './features/auth/components/MyAccount';
 import ProtectedRoute from './features/auth/components/ProtectedRoute';
+import FavoritesPage from './features/favorites/components/FavoritesPage';
 
 function App() {
   return (
@@ -40,6 +41,14 @@ function App() {
             element={
               <ProtectedRoute>
                 <MyAccount />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/favorites"
+            element={
+              <ProtectedRoute>
+                <FavoritesPage />
               </ProtectedRoute>
             }
           />
