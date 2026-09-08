@@ -1,7 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import FavoriteButton from '@/features/favorites/components/FavoriteButton';
 import { motion } from 'framer-motion';
 import { Star } from 'lucide-react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import type { Product } from '../types/product';
 
 interface ProductCardProps {
@@ -25,6 +26,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, delay = 0 }) => {
             className="w-full h-full object-cover transition-transform group-hover:scale-110"
             src={product.image_url}
           />
+          <FavoriteButton productId={product.product_id} className="absolute top-3 left-3" />
           <span className="absolute top-3 right-3 bg-primary-container text-on-primary-container text-xs font-bold px-2 py-1 rounded shadow-sm flex items-center gap-1">
             <Star className="w-3 h-3 fill-current" />
             {product.average_rating.toFixed(1)}
